@@ -236,13 +236,14 @@ class ArtifactServiceTest {
         //Given
         given(artifactRepository.findById("1250808601744904192")).willReturn(Optional.empty());
 
+
         //When
         assertThrows(ArtifactNotFoundException.class, () -> {
             artifactService.delete("1250808601744904192");
         });
 
         //Then
-        verify(artifactRepository, times(1)).deleteById("1250808601744904192");
+        verify(artifactRepository, times(1)).findById("1250808601744904192");
 
 
     }

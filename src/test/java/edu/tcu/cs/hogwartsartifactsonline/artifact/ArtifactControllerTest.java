@@ -58,37 +58,37 @@ class ArtifactControllerTest {
 
         Artifact a2 = new Artifact();
         a2.setId("1250808601744904192");
-        a1.setName("Invisibility Cloak");
-        a1.setDescription("An invisibility cloak is used to make the wearer invisible.");
-        a1.setImageURL("ImageUrl");
+        a2.setName("Invisibility Cloak");
+        a2.setDescription("An invisibility cloak is used to make the wearer invisible.");
+        a2.setImageURL("ImageUrl");
         this.artifacts.add(a2);
 
         Artifact a3 = new Artifact();
-        a1.setId("1250808601744904193");
-        a1.setName("Elder Wand");
-        a1.setDescription("The Elder Wand, known throughout history as the Deathstick or the Wand of Destiny, is an extremely powerful wand made of elder wood with a core of Thestral tail hair.");
-        a1.setImageURL("ImageUrl");
+        a3.setId("1250808601744904193");
+        a3.setName("Elder Wand");
+        a3.setDescription("The Elder Wand, known throughout history as the Deathstick or the Wand of Destiny, is an extremely powerful wand made of elder wood with a core of Thestral tail hair.");
+        a3.setImageURL("ImageUrl");
         this.artifacts.add(a3);
 
         Artifact a4 = new Artifact();
-        a1.setId("1250808601744904194");
-        a1.setName("The Marauder's Map");
-        a1.setDescription("A magical map of Hogwarts created by Remus Lupin, Peter Pettigrew, Sirius Black, and James Potter while they were students at Hogwarts.");
-        a1.setImageURL("ImageUrl");
+        a4.setId("1250808601744904194");
+        a4.setName("The Marauder's Map");
+        a4.setDescription("A magical map of Hogwarts created by Remus Lupin, Peter Pettigrew, Sirius Black, and James Potter while they were students at Hogwarts.");
+        a4.setImageURL("ImageUrl");
         this.artifacts.add(a4);
 
         Artifact a5 = new Artifact();
-        a1.setId("1250808601744904195");
-        a1.setName("The Sword of Gryffindor");
-        a1.setDescription("A goblin-made sword adorned with large rubies on the pommel. It was once owned by Godric Gryffindor, one of the medieval founders of Hogwarts.");
-        a1.setImageURL("ImageUrl");
+        a5.setId("1250808601744904195");
+        a5.setName("The Sword of Gryffindor");
+        a5.setDescription("A goblin-made sword adorned with large rubies on the pommel. It was once owned by Godric Gryffindor, one of the medieval founders of Hogwarts.");
+        a5.setImageURL("ImageUrl");
         this.artifacts.add(a5);
 
         Artifact a6 = new Artifact();
-        a1.setId("1250808601744904196");
-        a1.setName("Resurrection Stone");
-        a1.setDescription("The Resurrection Stone allows the holder to bring back deceased loved ones, in a semi-physical form, and communicate with them.");
-        a1.setImageURL("ImageUrl");
+        a6.setId("1250808601744904196");
+        a6.setName("Resurrection Stone");
+        a6.setDescription("The Resurrection Stone allows the holder to bring back deceased loved ones, in a semi-physical form, and communicate with them.");
+        a6.setImageURL("ImageUrl");
         this.artifacts.add(a6);
     }
 
@@ -222,7 +222,7 @@ class ArtifactControllerTest {
         this.mockMvc.perform(put("/api/v1/artifacts/1250808601744904192").contentType(MediaType.APPLICATION_JSON).content(json).accept(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.flag").value(false))
                 .andExpect(jsonPath("$.code").value(StatusCode.NOT_FOUND))
-                .andExpect(jsonPath("$.message").value("Could not find artifacts with Id 1250808601744904192 ;("))
+                .andExpect(jsonPath("$.message").value("Could not find artifact with Id 1250808601744904192 :("))
                 .andExpect(jsonPath("$.data").isEmpty());
     }
 
@@ -248,7 +248,7 @@ class ArtifactControllerTest {
         this.mockMvc.perform(delete("/api/v1/artifacts/1250808601744904191").accept(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.flag").value(false))
                 .andExpect(jsonPath("$.code").value(StatusCode.NOT_FOUND))
-                .andExpect(jsonPath("$.message").value("Could not find artifacts with Id 1250808601744904191 ;("))
+                .andExpect(jsonPath("$.message").value("Could not find artifact with Id 1250808601744904191 :("))
                 .andExpect(jsonPath("$.data").isEmpty());
     }
 
