@@ -1,5 +1,9 @@
-package edu.tcu.cs.hogwartsartifactsonline.hogwartsuser;
 
+package edu.tcu.cs.hogwartsartifactsonline.hogwartuser;
+
+import edu.tcu.cs.hogwartsartifactsonline.hogwartsuser.HogwartsUser;
+import edu.tcu.cs.hogwartsartifactsonline.hogwartsuser.UserRepository;
+import edu.tcu.cs.hogwartsartifactsonline.hogwartsuser.UserService;
 import edu.tcu.cs.hogwartsartifactsonline.system.exception.ObjectNotFoundException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,7 +13,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -37,6 +40,7 @@ class UserServiceTest {
     UserService userService;
 
     List<HogwartsUser> hogwartsUsers;
+
 
     @BeforeEach
     void setUp() {
